@@ -4,8 +4,11 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "build:prod": "webpack --mode production --env production",
+    "start": "node server/server.js",
     "serve": "live-server public/",
     "build": "webpack",
+    "heroku-postbuild": "npm run build:prod",
     "dev-server": "webpack-dev-server"
   },
   "author": "",
