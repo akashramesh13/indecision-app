@@ -1,31 +1,42 @@
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 
-module.exports = (env) => {
-  const isProduction = env.production === true;
-
-  return {
-    entry: "./src/app.js",
-    output: {
-      path: path.join(__dirname, "public"),
-      filename: "bundle.js",
+module.exports = {
+  entry: "./src/app.js",
+  mode: "development",
+  output: {
+    path: path.resolve(__dirname, "./dist"),
+    filename: "index_bundle.js",
+  },
+  target: "web",
+  devServer: {
+    port: "5000",
+    static: {
+      directory: path.join(__dirname, "public"),
     },
-    mode: "development",
-    module: {
-      rules: [
-        {
-          use: "babel-loader",
-          test: /\.js$/,
-          exclude: /node_modules/,
-        },
-        {
-          use: ["style-loader", "css-loader", "sass-loader"],
-          test: /\.s?css$/,
-        },
-      ],
-    },
-    devtool: "eval-cheap-module-source-map",
-    devServer: {
-      static: path.join(__dirname, "public"),
-    },
-  };
+    open: true,
+    hot: true,
+    liveReload: true,
+  },
+  resolve: {
+    extensions: [".js", ".jsx", ".json"],
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: "babel-loader",
+      },
+      {
+        use: ["style-loader", "css-loader", "sass-loader"],
+        test: /\.s?css$/,
+      },
+    ],
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, "public", "index.html"),
+    }),
+  ],
 };
