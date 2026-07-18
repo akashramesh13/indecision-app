@@ -6,8 +6,8 @@ const Options = (props) => (
     <div className="widget-header">
       <h3 className="widget-header__title">Your Options</h3>
       <button
-        onClick={props.handleDeleteOptions}
         className="button button--link"
+        onClick={props.handleDeleteOptions}
       >
         Remove All
       </button>

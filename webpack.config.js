@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 
 module.exports = {
-  entry: "./src/app.js",
+  entry: "./src/app.jsx",
   mode: "development",
   output: {
     path: path.resolve(__dirname, "./dist"),
@@ -37,6 +37,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "public", "index.html"),
+      favicon: path.join(__dirname, "public", "images", "favicon.svg"),
     }),
   ],
 };

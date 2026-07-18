@@ -1,6 +1,6 @@
 // Add Option Error
 .add-option-error {
-  color: $off-white;
+  color: $text-secondary;
   font-style: italic;
   padding: 0 $m-size;
   margin: $m-size 0 0 0;
@@ -13,12 +13,33 @@
 }
 
 .add-option__input {
-  background: $dark-blue;
-  border-bottom: 0.3rem solid darken($purple, 10%);
+  background: $surface;
+  border: 1px solid $surface-light;
+  border-radius: 6px;
   flex-grow: 1;
-  color: $off-white;
+  color: $text;
   margin: 0 0 $s-size 0;
-  padding: $s-size;
+  padding: 1.4rem 1.6rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  font-family: inherit;
+  font-size: 1.6rem;
+
+  &::placeholder {
+    color: $text-secondary;
+    opacity: 0.7;
+  }
+
+  &:focus {
+    outline: none;
+    background: $surface2;
+    border-color: $primary;
+    box-shadow: 0 0 0 2px rgba(17, 17, 17, 0.1); // subtle focus ring
+  }
+}
+
+:root[data-theme="dark"] .add-option__input:focus,
+:root[data-theme="terminal"] .add-option__input:focus {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
 }
 
 @media (min-width: $desktop-breakpoint) {

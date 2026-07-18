@@ -18,12 +18,15 @@
 }
 
 .modal {
-  background: $light-blue;
-  color: white;
+  background: $surface;
+  color: $text;
   max-width: 30rem;
   outline: none;
   padding: $l-size;
   text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border: 1px solid $surface-light;
 }
 
 .modal__title {

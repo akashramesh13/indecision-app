@@ -1,21 +1,34 @@
-// Widget
 .widget {
-  background: $light-blue;
+  background: $surface;
   margin-bottom: $xl-size;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  border: 1px solid $surface-light;
+}
+
+:root[data-theme="terminal"] .widget {
+  box-shadow: none;
+  border-style: dashed;
 }
 
 .widget__message {
-    color: $off-white;
+    color: $text-secondary;
     margin: 0;
-    padding: $l-size;
+    padding: $m-size $l-size;
     text-align: center;
-    border-bottom: 1px solid lighten($light-blue, 10%);
+    border-bottom: 1px solid $border;
+    font-size: 1.8rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 // Widget Header
 .widget-header {
-  background: $blue;
-  color: $off-white;
+  background: $surface2;
+  color: $text;
   padding: $m-size;
   display: flex;
   justify-content: space-between;

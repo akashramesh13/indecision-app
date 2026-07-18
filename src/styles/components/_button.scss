@@ -1,18 +1,31 @@
 // Big Button
 .big-button {
-  background: $purple;
+  background: $primary;
   border: none;
-  border-bottom: 0.6rem solid darken($purple, 10%);
-  color: white;
-  font-weight: bold;
+  border-radius: 8px;
+  color: $primary-text;
+  font-weight: 600;
   font-size: $l-size;
   margin-bottom: $m-size;
   padding: 2.4rem;
   width: 100%;
-}
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 
-.big-button:disabled {
-  opacity: 0.5;
+  &:hover {
+    transform: translateY(-2px);
+    background-color: $primary-dark;
+    box-shadow: 0 6px 8px -1px rgba(0, 0, 0, 0.15);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    background-color: $primary;
+    box-shadow: none;
+  }
 }
 
 @media (min-width: $desktop-breakpoint) {
@@ -23,17 +36,36 @@
 
 // Button
 .button {
-  background: $purple;
+  background: $primary;
   border: none;
-  border-bottom: 0.3rem solid darken($purple, 10%);
-  color: white;
+  border-radius: 6px;
+  color: $primary-text;
   font-weight: 500;
-  padding: $s-size;
+  padding: 0.8rem 1.6rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+
+  &:hover {
+    background: $primary-dark;
+    transform: translateY(-1px);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: $primary;
+  }
 }
 
 .button--link {
   background: none;
   border: none;
-  color: $off-white;
-  padding: 0;
+  color: $text;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background: $surface-light;
+  }
 }
