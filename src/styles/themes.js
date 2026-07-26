@@ -1,14 +1,14 @@
 export const lightTheme = {
-  background: "#FFFFFF",
-  surface: "#FFFFFF",
-  surface2: "#F5F5F5",
-  surfaceLight: "#EEEEEE",
-  text: "#111111",
-  textSecondary: "#555555",
-  primary: "#111111",
-  primaryDark: "#222222",
-  primaryText: "#FFFFFF",
-  border: "#EEEEEE",
+  background: "#f8f6f2",
+  surface: "#f5f3ee",
+  surface2: "#faf8f4",
+  surfaceLight: "#ffffff",
+  text: "#1a1a1a",
+  textSecondary: "#5c5c5c",
+  primary: "#8a0322",
+  primaryDark: "#6a021a",
+  primaryText: "#ffffff",
+  border: "rgba(0, 0, 0, 0.06)",
 };
 
 export const darkTheme = {
